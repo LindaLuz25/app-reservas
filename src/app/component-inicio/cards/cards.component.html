@@ -1,0 +1,16 @@
+<div class="card-container mx-auto">
+    @for (item of countrys; track item.id) {
+    <div class="card">
+      <img src="{{ item.imagen }}" class="card-img-top" alt="Imagen de la propiedad">
+      <div class="card-body">
+        <h5 class="card-title">{{ item.name.common }}</h5>
+        <p class="card-text">{{ item.name.official }}</p>
+        <p class="card-text">{{ item.descripcion }}</p>
+        <a [routerLink]="['/generareserva']" class="btn btn-primary"
+          (click)="seleccionarLugar(item.id, item.imagen, item.name.common, item.name.official, item.descripcion)">
+          Reservar
+        </a>
+      </div>
+    </div>
+    }
+  </div>

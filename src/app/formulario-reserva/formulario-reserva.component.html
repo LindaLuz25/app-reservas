@@ -1,0 +1,31 @@
+<div class="reserva-container mt-5 pt-5 container">
+    <div class="container">
+        <img src="{{propiedad.imagen}}" alt="Lugar" class="img-fluid" width="800" >
+        <h3 class="mt-2" >{{ propiedad.nombrePropiedad }}</h3>
+        <p >{{ propiedad.infoPropiedad }}</p>
+        <p >{{ propiedad.descripcion }}</p>
+    </div>
+
+    <div class="container-form ">
+        <form #formulario="ngForm">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre"
+                    [(ngModel)]="reservaForm.nombre" name="nombre"required>
+            </div>
+
+            <div class="mb-3">
+                <label for="fecha" class="form-label">Fecha</label>
+                <input type="date" class="form-control" id="fecha" [(ngModel)]="reservaForm.fecha" name="fecha" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="hora" class="form-label">Hora de reserva</label>
+                <input type="time" class="form-control" id="hora" [(ngModel)]="reservaForm.hora" name="hora" required >
+            </div>
+
+            <button type="button" class="btn btn-primary" (click)="recibirReserva()" [routerLink]="('/reservas')" [disabled]="!formulario.valid">Agregar Reserva</button>
+        </form>
+    </div>
+
+</div>

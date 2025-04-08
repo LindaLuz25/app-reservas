@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        @for (item of reservasFiltradas; track item.getId()) {
+
+        <div class="col-12 mb-3">
+            <div class="card flex-row align-items-center">
+
+                <div class="p-2">
+                    <img [src]="item.propiedad.imagen" alt="Imagen de la propiedad" class="img-fluid rounded"
+                        style="width: 18rem; height: auto;">
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.propiedad.nombrePropiedad|uppercase }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Cliente: {{ item.nombreCliente}}</h6>
+                    <p class="card-text">{{ item.propiedad.infoPropiedad }}</p>
+                    <p class="card-text">{{ item.propiedad.descripcion }}</p>
+                    <p class="card-text">
+                        <strong>Fecha:</strong> {{ item.fecha |date:'longDate'}}<br>
+                        <strong>Hora:</strong> {{ item.hora }}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        }
+
+
+    </div>
+</div>
